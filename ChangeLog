@@ -1,0 +1,486 @@
+1.4.2 (2022-10)
+
+	* Migration from Qt 4.x to Qt 5.
+
+	* ChangeLog file was added.
+
+	* Icon application was changed.
+
+	* Fixed some minor compiler warnings.
+
+	Thanks to Poly Electronics for his collaboration
+
+1.4.1
+
+	* Pure Qt4 version (Qt 3.x compatibility code removed) + bug fix
+
+1.4.0 (2013-2)
+
+	* PiKdev 1.4.0 is PikDev for Qt 4 This is the first version of PiKdev
+	not based on KDE libs. This version is easier to maintain than the previous
+	ones. It is functionnaly equivalent but offers new features.
+
+	* Updated config bits editor : it supports the CONFIG syntax that is
+	specific to PIC18 devices. This feature is also supported by cpik 0.7.2.
+	A new config bits description scheme has been implemented for this purpose.
+
+	* Integrated browser for HTML documentation coming with gputils 1.0.0 :
+	This documentation is automatically generated from various sources from
+	Microchip and provides many valuable information about ALL PIC devices
+	currently available.
+
+1.2.1 (2009-9)
+
+	* Bug fix C parser caused an editor freeze, when a syntax error was located
+	at the very end of a source file.
+
+	* Totally new config bits editor : This very handy dialog allows you to
+	choose the config bits needed by your application. This dialog generates two
+	files: config_bits.h and a config_bits.asm. You just have to include one of
+	these files in your application, depending on the language you use.
+	Alternatively, you can drag the generated source code to the editor. CONFIG
+	bits status is part of the project configuration.
+
+1.2.0 (2009-7)
+
+	* New support A new 10F device is supported by the buit-in programmer.
+
+	* Netbooks support : Large dialog has been modified to be usable with machines
+	equiped with a small screen (netbooks).
+
+	* New support for C users (cpik compiler) : The project widget now allows a
+	one click access to any function, variable or typedef in a project. For this
+	feature, the source code is continuously parsed during edition. This feature
+	also works for ".slb" (sources libraries) files, so any entry point in a
+	source library can be reached. Really very handy when a project becomes
+	important.
+
+1.1.0 (2009-1)
+
+	* pk2cmd and pikdev are now compatible : pk2cmd (the command line tool
+	provided by Microchip for PicKit2 programmer) and pikdev have been both
+	modified to become compatible. It means that every ehancement of the pk2cmd
+	tool (new device support for example) will be immediately available under
+	pikdev.
+
+1.0.0 (2008-12)
+
+	* pk2cmd based support of picKit2 USB programmer : This support is based on
+	modified version of the Microchip pk2cmd tool and allows to program many new
+	devices which was not previously supported.
+
+0.9.2-1
+
+	* Minor fixes : Support for 18F2420/30 and more was broken, due to errors in
+	Microchip device files.
+
+0.9.1-4
+
+	* pkp build is automatic : pkp is now part of pikdev build, but the previous
+	Makefile.pkp is still distributed: people who don't want to use KDE can build
+	it separatly.
+
+	* Italian translation is up-to-date Thanks to Michele Petrecca.
+
+	* Some installation issues fixed.
+
+0.9.1
+
+	* Support for PicKit2 programmer from Microchip. : PicKit2 is supported trough
+	Jeff Post's pk2 programming software. Access to pk2 is totally transparent for
+	PiKdev users. Experimentation board from Microchip can directly be powered
+	on/off from programming dialog. This support needs pk2 version 1.36 or newer.
+	Thanks to Jeff for his collaboration.
+
+	* Support for pkp as external programming tool : This support seems strange
+	because it doesn't add any functionnality to PiKdev, because pkp and PiKdev
+	share the same programming engine. In fact, pkp is supported as a demonstrator
+	of "how to support an external programming tool". Programming tool authors who
+	wish to have their software supported by PiKdev can look at pkp support to
+	evaluate PiKdev requirements.
+
+0.8.4
+
+	* Partial rewrite of internal programmer driver integration framework : This
+	rewrite is intended to prepare support for external programmers. The
+	development of new device drivers have been simplified and is more generic:
+	one can now write less code to support more devices.
+
+	* New devices : Due to rewrite of driver integration framework, many new
+	devices are now supported. please consult the exact list here. This list
+	contains up to 158 device references, so I am not able to test all this stuff.
+	All the devices support I have tested work, but I can't offer any guarantee
+	about the others. I ask pikdev users to systematically report their
+	experiences, so I will be able to maintain a list of really tested devices on
+	this site.
+
+	* User interface: Improved programmer widget : The programmer widget now
+	display a progress bar and user interface is no longer freezed during long
+	programming operations. Moreover, the config bits configuration widget now
+	displays tooltips documenting each bit of the config registers. This feature
+	was technically already here, but supported by a limited range of drivers. It
+	is now usable with all devices and is very handy.
+
+	* pkp revamped : pkp, the stand alone programmer build onto PiKdev programming
+	engine now supports a complete command line mode. Old interactive mode is
+	still available when one run pkp without any argument. Remember that pkp
+	doesn't need neither Qt nor KDE to work.
+
+0.8.2
+
+	* Bug fix : Loading .hex files was broken in a very rare situation. This is
+	now fixed.
+
+	* New devices : 16f685, 16f687, 16f689, 16f690 are now supported.
+
+	* User interface : Several users was confused by the availability of two
+	distinct configuration widgets (in project mode and single-file mode).
+	Depending on current mode, inappropriate widget is now locked, so there is no
+	room for being confused.
+
+	* .lnk files support : One can now include a .lnk (linker script) file into
+	project: in this case, this file replaces the standard one.
+
+	* Automatic indentation : PiKdev editor now provides automatic indentation of
+	C source files. (CTRL-I). This features needs the (excellent) astyle program
+	to be available in your system.
+
+0.8.1
+
+	* Bug fix : Support for 18Fxxx and 18FXX20 was broken since version 0.8.0.
+	Fixed now.
+
+0.8.0
+
+	* New devices : The following new devices are now supported: 18F2550, 18F4550,
+	18F2455, 18F4455.
+
+	* Syntax highlight : Improved for better support of .slb source library and
+	support for SFRs coloring.
+
+	* C language support : A first support for C development is available. It has
+	been designed for supporting cpik, my new C compiler for 18F devices. With C
+	projects, only one click is sufficient to compile, link and assemble an
+	application. Feedbacks are welcome.
+
+0.7.2
+
+	* Internationalization : Thanks to Andre Lohan, PiKdev GUI is now translated
+	to german. Available languages are english, spanish, french, german.
+	Translators for other languages are welcome, just drop me a mail.
+
+	* New devices : The following new devices are now supported. 16F688, 16F684,
+	12F683, 16F636, 12F635.
+
+	* Programmation widget and pic base class : Improved for better support of
+	devices with calibration words mapped in program or configuration memory.
+
+	* User interface : Configuration widgets are now part of a config center.
+	This config center defines a framework to allow integration of (future)
+	configuration widgets dedicated to other programming languages.
+
+0.7.1
+
+	* Internationalization : Thanks to JAVIER FERNANDO VARGAS G, PiKdev GUI is now
+	translated to spanish. I also translated it to french, so PiKdev now speaks
+	three languages. People insterested by doing translation to another language
+	are invited to contact me.
+
+	* PiKdev mailing list : A mailing-list is now open to connect members of the
+	pikdev users community. Please see contact page for details.
+
+0.7.0
+
+	* This is the first version for Mdk 10.0 (and KDE >3.1). Backward source
+	compatibility with KDE 3.1 has been tested. Precompiled binaries are NOT KDE
+	3.1 compatible.
+
+	* Syntax HL: Because several syntax files provided with recent KDE versions
+	address .asm files, I had to force the "good" syntax scheme (XPicAsm) from
+	PiKdev. Before this fix, pic asm files was edited with Rockwell's 6502
+	microprocessor editing scheme :-(.
+
+	* KDE >3.1: Various modifications to cope with KDE API changes.
+
+	* Session management: Window size, Iconbar settings are now restored.
+	Previously opened files and project are also re-open when you run PiKdev.
+
+	* External tool: JAVIER FERNANDO VARGAS G (fernandovargas@cable.net.co) sent
+	me PiKloops, a little utility which generates code for timing loops. I
+	partially rewrote the GUI (drag and drop support) to make it easily usable
+	with PiKdev. PiKloops can be launched from PiKdev, and generated code can be
+	dragged to PiKdev editors. Very easy to use, feedbacks are welcome. PiKloops
+	is available on my download page, with Javier's authorization.
+
+0.6.6a
+
+	* Bug Fix: SegFault at exit with recent KDE distributions is now fixed.
+
+0.6.6
+
+	* Cosmetic: The programmer configuration widget has been modified because some
+	users was confused by the "standard cards" combobox.
+
+	* Installation: Old user-infertace files (.rc) are now deleted when a new
+	version is installed, so interface changes are now immediatly visible.
+
+	* Installation: RPM Conflict with recent KDE distributions about file
+	"picsrc.xml" file has been removed.
+
+	* Editor: Editor is now fully configurable (fonts, colors, etc..).
+
+	* Syntax HL: A new syntax hightlight file is provided with full support for
+	PIC18 instructions and recent gpasm directives.
+
+	* Programming widget: has been revamped for users with low-res screen.
+
+	CAUTION: PiKdev segfault on exit with recent KDE distributions. This does not
+	prevent you from using it, but is clearly the result of a bug. Unfortunatly, I
+	cannot reproduce this error on my machine for the moment. A fixed version will
+	be released as soon as possible. Suggestions are welcome.
+
+0.6.5c
+
+	* Bug fix: A already fixed bug that caused crash in programmer configuration
+	box reappeared because of bad integration of Mirko's work. Refixed now.
+
+	* Bug fix: Pin polarity management for serial port programmer was totally
+	missing, and prevented non JDM serial programmer from working.
+
+0.6.5
+
+	* New devices: 16F73/74/76/77 : Thank you to Keith Baker who wrote these two
+	classes.
+
+	* Support for programmers with data direction control line : Thank you to
+	Mirko Panciri who wrote this support (mainly for Asix Picolo programmers).
+
+	* Minor bug fixes.
+
+	* More standard programmer configurations.
+
+0.6.4
+
+	* New devices: 16F627A, 16F628A, 16F648A (Tested).
+
+	* Better support for missing/misconfigured ports : The programmer
+	configuration widget does not crash anymore when a port is missing, and PiKdev
+	gives better warning messages.
+
+	* Disassembler (gpdasm) support : Allows to disassemble an existing hex file.
+	Assembler configuration widget has been extended to support disassembler
+	configuration.
+
+	* Editor upgrade : Adding "Find next" and "Find previous" functionnalities.
+
+	* Editor upgrade : Adding "Print file" functionnality.
+
+0.6.3
+
+	* New devices: 16F818/16F819 (tested) 16F87/16F88 (NOT tested). Please report
+	your experiences with these devices.
+
+	* New timings and clock rates : Some device/programmer couples (especially
+	with 18F devices) cause problems with PiKdev. This version has been reported
+	to fix problems mentionned with version 0.6.2.
+
+0.6.2
+
+	* Bug fix: an horrible uninitialized pointer randomly prevented project
+	management from working properly. I strongly encourage users of version 0.6.1
+	to install version 0.6.2 because this bug can crash PiKdev. Thanks to Mike
+	Rothon for the bug report.
+
+	* New devices supported: p16c61 p16c62 p16c620 p16c620a p16c621 p16c621a
+	p16c622 p16c622a p16c62a p16c62b p16c63 p16c63a p16c64 p16c64a p16c65 p16c65
+	p16c65a p16c65b p16c71 p16c710 p16c711 p16c716 p16c72 p16c72a p16c73 p16c73a
+	p16c73b p16c74 p16c74 p16c745 p16c74a p16c74b p16c76 p16c765 p16c77 p16c773
+	p16c774 p16c923 p16c924 p16cr62
+	(CAUTION: 16C745 and 16C765 have been successfully tested, but other devices
+	of this serie are not. Testers are welcome.).
+
+	* Programmer timings have been changed to cope with some programming cards:
+	Thanks to Don Kessler who pointed out these problems and tested fixes.
+	However, it seems that problems remain with P16PRO40 programmers and 18Fxxx
+	chips.
+
+	* New standard pin configurations have been added.
+
+0.6.1
+
+	* New devices supported  :16F630, 16F676 (thanks to Sean A. Walberg).
+
+	* Command line parsing has been improved and now supports project files. As a
+	consequence, PiKdev can be run just by clicking project files.
+
+	* A project can be opened by dragging project files from Konqueror to project
+	widget (A previously opened project is closed). A file can be added to an
+	opened project by the same way.
+
+	* One can create several projects in the same directory. This is useful in the
+	case of already existing directory trees.
+
+	* Include (ie: .inc) files can now be inserted into projects. They are not
+	assembled but they are part of project, so they appear in the project widget
+	and can be edited.
+
+	* Editor now includes an "autowrap lines" features (F12), as Kate does. Useful
+	for long comment lines.
+
+	* Native DOS source files are automatically recognized (they use CR-LF instead
+	of LF), and are saved with their original end of lines. EOL status of any
+	editor buffer can be changed at any moment. This feature allows to work in a
+	mixed-OS environment.
+
+	* Many minor improvements, bug fixes or security checks.
+
+0.6 Another "important" release
+
+	* Serial (JDM like) programmers are now supported. I added this support
+	because this type of programmer is very popular. Moreover, you can use an USB
+	to serial adapter on machines without serial port. PiKdev theoritically
+	autodetects this kind of ports, but this feature is not tested because I do
+	not have such an adapter. Here is some informations about the hardware I use.
+	As a consequence, the programmer configuration widget has been revamped and
+	now allows choice of a "standard" board in a predefined list.
+
+	This list is currently reduced to 3 items but is intended to grow : please
+	send me feedbacks about the programmer you use, with its configuration
+	(schematics are welcome). A button allows you to save your own pins
+	configuration.
+
+	PiKdev maintains a separate configuration for parallel and serial ports so you
+	can change from one to other with a simple click, whithout reconfiguring pins.
+	Pins selection has been improved : only relevant pins are proposed and combo
+	boxes now contain pin names (and not only pin numbers). Port can be
+	dynamically selected, so you can simultaneously use different programmers on
+	different ports.
+
+	* An "open recent file" function has been added to the "file" menu.
+
+	* Device autodetection is now implemented (for devices supporting device ID).
+	The programming widget systematically tests the detected type against the
+	current type and report mismatches.
+
+0.5 This is a "major" release
+
+	* New devices supported :12F675, 12F629 (tested).
+
+	* Word editors in the programming widget have been modified to behave in a
+	more natural way: typed values are automatically validated when you leave the
+	widget and you are not obliged anymore to hit the return key.
+
+	* I now provide a RPM version of PiKdev because some people had problems
+	compiling and installing it. This RPM has been tested for Mandrake 9.1 and
+	RedHat 9.0 distributions.
+
+	* PiKdev now supports projects and uses relocatable mode with gpasm/gplink.
+	Projects can be managed from popup menus in the project widget, or by a
+	traditionnal menu/toolbar way. The following project-relative functionnalities
+	have been added:
+		Create Project
+		Open Project
+		Open Recent Project
+		Edit Project
+		Close Project
+		Add file (source, object or library) to Project
+		Add current source file to Project
+		Remove file from Project
+
+	* The old absolute mode (all the code is located in only one file) is still
+	available and is selected when there is no open project.
+
+	* Project is assembled/linked with only one click, and assembly occurs only if
+	object file is not up to date. Provisions for compilation of "high level"
+	languages (C, JAL, GPAL, other) already exists in the code.
+
+0.4.4
+
+	* New devices supported :16F873A, 16F874A, 16F876A, 16F877A.
+	Gerardo (gpuga@gioia.ing.unlp.edu.ar) sent me a patch to process command line,
+	so PiKdev can now be lauched by a click on an .asm or .hex file.
+
+0.4.3
+
+	* Bug fix in the hardware configuration widget (permuted checkboxes)
+
+	IMPORTANT: The programming engine of PiKdev now comes with a non graphical
+	user interface. This programm is named pkp (PiK Programmer) and is intended
+	for use by people who do no use KDE or are not able to compile PiKdev because
+	they have an old Linux distribution. pkp has a simple command line interface
+	and have exactly the same programming capabilities as PiKdev, on the same
+	devices. For lazy people, a pre-compiled version of pkp is available in the
+	pikdev-[VERSION] directory which sould work with recent gcc 3.2 based
+	distributions. Please see the installation section for details about
+	compilation of pkp. (No KDE or Qt libraries needed). Compilation with pre-3.0
+	gcc compiler is possible but may raise problems with namespaces. Please report
+	such problems, I will modify the code to make it more nonstandard-C++
+	tolerant.
+
+0.4.2
+
+	* Support for 18F1220, 18F1320, 18F2220, 18F2320, 18F4220 and 18F4320 devices.
+
+0.4.1
+
+	* Timing bug fix in 18F support.
+
+	* Verification of programmed devices is now also implemented for 18Fxxx.
+	"Must be 0" or "must be 1" bits in CONFIG registers are now automatically
+	forced to the correct value. This feature prevents spurious error messages
+	during verifications.
+
+	* The hardware configuration widget now allows you to test your configuration.
+	Just click on the desired checkbox, and verify the voltage with a multimeter
+	on the device pins. You can also continuously send data to the interface and
+	verify with an oscilloscope.
+
+0.4
+
+	* Asm configuration widget now allows to use parameters specified in source
+	code by a LIST or PROCESSOR directive (No need to reconfigure when you
+	assemble files for different target devices).
+
+	* Add support for 16F870, 16F871, 16F872, 16F873, 16F874. Support for 16F876
+	is now tested (but other devices of the same family are not, feedbacks about
+	these devices are welcome).
+
+	* Support for 18Fxxx devices now exists. The concerned devices are 18F242,
+	18F248, 18F442, 18F448, 18F252, 18F258, 18F452, 18F458. Thanks to Manwlis
+	Giannos (mgiannos2000@yahoo.gr) who wrote the programming code. This support
+	is tested for 18F452 device. As usual, send feedback to alain.gibaud@free.fr.
+
+0.3.4
+
+	* Bug Fix in configuration widgets.
+
+	* Include path for gpasm can now be relative to the source path.
+
+	* Parallel ports are now automatically probed.
+
+	* Configuration widgets are now documented by tooltips.
+
+	* The asm configuration widget now explicitly signals devices supported by the
+	PiKdev programmer.
+
+0.3.3
+
+	* Since KDE 3.1.0, Kate uses the "katepart" directory (instead of the "kate"
+	one to store syntaxfiles (.xml). Installation procedure has been modified
+	accordingly.
+
+0.3.2
+
+	* Improved installation.
+
+	* Improved programmer widget.
+
+0.3.1
+
+	* Add internationalization support in source code, cleaner tarball, better
+	installation process (the .xml kate syntaxfile is now automatically
+	installed), bug fix.
+
+0.3 (2003)
+
+	* First public version.

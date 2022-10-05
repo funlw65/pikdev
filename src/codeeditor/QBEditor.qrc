@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/dialog-close.png</file>
+        <file>icons/arrow-down.png</file>
+        <file>icons/arrow-up.png</file>
+        <file>icons/draw-arrow-down.png</file>
+        <file>icons/draw-arrow-up.png</file>
+        <file>icons/NCS.png</file>
+        <file>icons/CS.png</file>
+        <file>icons/search-forward.png</file>
+        <file>icons/search-backward.png</file>
+        <file>icons/open.png</file>
+        <file>icons/save-as.png</file>
+        <file>icons/save.png</file>
+        <file>icons/edit-find-replace.png</file>
+        <file>icons/edit-redo.png</file>
+        <file>icons/edit-undo.png</file>
+        <file>icons/edit-paste.png</file>
+        <file>icons/edit-cut.png</file>
+        <file>icons/edit-copy.png</file>
+        <file>icons/go-jump.png</file>
+        <file>icons/doc-close.png</file>
+        <file>icons/document-save.png</file>
+        <file>icons/document-new.png</file>
+    </qresource>
+</RCC>

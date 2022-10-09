@@ -145,15 +145,21 @@ void CodeEditor::highlightCurrentLine ()
     highlightCurrentLine_ (QColor (Qt::yellow).lighter (160));
 }
 
-void CodeEditor::highlightCurrentLine_ (const QColor& lineColor)
+void CodeEditor::highlightCurrentLine_ (__attribute__ ((unused)) const QColor& lineColor)
 {
     QList<QTextEdit::ExtraSelection> extraSelections;
 
     if (! isReadOnly ())
       {
         QTextEdit::ExtraSelection selection;
+	QPalette p = this->palette ();
+	QColor c = p.color (QPalette::Text);
 
-        selection.format.setBackground (lineColor);
+	if (c.lightness () < 100)
+	  selection.format.setBackground (QColor (Qt::yellow).lighter (160));	
+	else
+	  selection.format.setBackground (QColor (Qt::gray).darker (160));
+	
         selection.format.setProperty (QTextFormat::FullWidthSelection, true);
         selection.cursor = textCursor ();
         selection.cursor.clearSelection ();

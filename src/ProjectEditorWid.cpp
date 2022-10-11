@@ -396,8 +396,8 @@ void ProjectEditorWid::slotOk ()
 void ProjectEditorWid::slotSelectIncDir ()
 {
     QString selected;  // not used
-    QString dir = QFileDialog::getOpenFileName (this, tr ("Select include directory"), ".", "*",
-						&selected, QFileDialog::ShowDirsOnly);
+    QString dir = QFileDialog::getExistingDirectory (this, tr ("Select include directory"),
+						     selected, QFileDialog::ShowDirsOnly);
 
     if (! dir.isEmpty ())
       asm_include->setText (dir);
@@ -406,8 +406,8 @@ void ProjectEditorWid::slotSelectIncDir ()
 void ProjectEditorWid::slotSelectLibDir ()
 {
     QString selected; // not used
-    QString dir = QFileDialog::getOpenFileName (this, tr ("Select libraries directory"), ".", "*",
-						&selected, QFileDialog::ShowDirsOnly);
+    QString dir = QFileDialog::getExistingDirectory (this, tr ("Select libraries directory"),
+						     selected, QFileDialog::ShowDirsOnly);
 
     if (! dir.isEmpty ())
       link_include->setText (dir);
@@ -416,8 +416,8 @@ void ProjectEditorWid::slotSelectLibDir ()
 void ProjectEditorWid::slotSelectCIncDir ()
 {
     QString selected; // not used
-    QString dir = QFileDialog::getOpenFileName (this, tr ("Select include directory"), ".", "*",
-						&selected, QFileDialog::ShowDirsOnly);
+    QString dir = QFileDialog::getExistingDirectory (this, tr ("Select include directory"),
+						     selected, QFileDialog::ShowDirsOnly);
 
     if (! dir.isEmpty ())
       {
@@ -432,8 +432,8 @@ void ProjectEditorWid::slotSelectCIncDir ()
 void ProjectEditorWid::slotSelectCLibDir ()
 {
     QString selected; // not used
-    QString dir = QFileDialog::getOpenFileName (this, tr ("Select libraries directory"), ".", "*",
-						&selected, QFileDialog::ShowDirsOnly);
+    QString dir = QFileDialog::getExistingDirectory (this, tr ("Select libraries directory"),
+						     selected, QFileDialog::ShowDirsOnly);
     if (! dir.isEmpty ())
       {
         QString t = C_libs->text ();
